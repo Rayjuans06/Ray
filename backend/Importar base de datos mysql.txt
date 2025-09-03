@@ -1,0 +1,7 @@
+ubicación en el CMd
+
+cd C:\xampp\mysql\bin
+
+ubicación de la base de datos 
+
+mysql -u root -p reportes < "C:\Users\rayju\Downloads\Xampp 2023\reportes.sql"

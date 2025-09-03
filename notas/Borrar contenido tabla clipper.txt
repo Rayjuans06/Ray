@@ -1,0 +1,16 @@
+
+DELETE FROM clipper;
+
+
+
+
+ALTER TABLE utilization DROP FOREIGN KEY utilization_ibfk_2;
+
+
+TRUNCATE TABLE clipper;
+
+
+
+ALTER TABLE utilization ADD CONSTRAINT utilization_ibfk_2 FOREIGN KEY (id_clipper) REFERENCES clipper(id);
+
+

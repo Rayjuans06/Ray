@@ -1,0 +1,623 @@
+/* intra.module.css actualizado */
+
+.container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to top, #e0e0e0, #ffffff);
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+}
+
+.darkModeContainer {
+  background: linear-gradient(to top, #1f1f1f, #121212);
+  color: #e0e0e0;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawerOverlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.drawerButton {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: #333;
+}
+
+.drawerButton:hover {
+  background: #f0f0f0;
+}
+
+.darkModeContainer .drawer {
+  background: #1e1e1e;
+}
+
+.darkModeContainer .drawerButton {
+  color: #ddd;
+}
+
+.darkModeContainer .drawerButton:hover {
+  background: #333;
+}
+
+.darkToggleWrapper {
+  padding: 1rem;
+}
+
+.darkToggleButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: #6c757d;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.darkToggleButton:hover {
+  background: #5a6268;
+}
+
+.darkModeContainer .darkToggleButton {
+  background: #444;
+}
+
+.darkModeContainer .darkToggleButton:hover {
+  background: #555;
+}
+
+.hamburger {
+  position: fixed;
+  top: 72px;
+  left: 16px;
+  z-index: 150;
+  font-size: 1.5rem;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.drawer.open ~ .hamburger {
+  display: none;
+}
+
+.darkModeContainer .hamburger {
+  background: #eee;
+  color: #121212;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.productionReport {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  overflow: visible;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  padding: 0.5rem 1rem;
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tabButton:hover {
+  background: #ddd;
+}
+
+.active {
+  background: #cf1818;
+  color: white;
+}
+
+.tabContent {
+  flex-grow: 1;
+  overflow: visible;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+.darkModeContainer .tabButton {
+  background: #444;
+  color: #e0e0e0;
+}
+
+.darkModeContainer .tabButton:hover {
+  background: #555;
+}
+
+.darkModeContainer .tabContent {
+  background: #2a2a2a;
+}
+
+.formSCM {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.darkModeContainer .formSCM {
+  background-color: #1e1e1e;
+}
+
+.zoneFieldset {
+  display: grid;
+  grid-template-rows: auto repeat(5, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fefefe;
+}
+
+.zoneFieldset[data-highlight="true"] {
+  background-color: #f0f0f0;
+}
+
+.darkModeContainer .zoneFieldset {
+  background-color: #2c2c2c;
+  border-color: #444;
+}
+
+.zoneLegend {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.formGroup label {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.darkModeContainer .formGroup label {
+  color: #ccc;
+}
+
+.formGroup input {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.darkModeContainer .formGroup input {
+  background: #3a3a3a;
+  color: white;
+  border-color: #555;
+}
+
+.addButton {
+  padding: 0.6rem 1.2rem;
+  background-color: #cf1818;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  justify-self: end;
+  font-size: 1rem;
+  grid-column: 1 / -1;
+}
+
+.addButton:hover {
+  background-color: #a71414;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.darkModeContainer .tableContainer {
+  background: #1f1f1f;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead {
+  background-color: #f0f0f0;
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table thead th {
+  font-weight: 600;
+  color: #333;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table .highlight-column {
+  background-color: #f0f0f0;
+}
+
+.darkModeContainer .table {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.darkModeContainer .table thead {
+  background-color: #444;
+}
+
+.darkModeContainer .table th, .darkModeContainer .table td {
+  border-color: #555;
+}
+
+.darkModeContainer .table tbody tr:hover {
+  background-color: #3a3a3a;
+}
+
+.darkModeContainer .table .highlight-column {
+  background-color: #3b3b3b;
+}
+
+.syncRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  gap: 1rem;
+}
+
+.syncButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.syncButton:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.syncMessage {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.table th, .table td {
+  padding: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table {
+  table-layout: auto;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Contenedor principal de la tabla de productividad */
+.productivityWrapper {
+  width: 70%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  min-width: 0;
+  flex: 0 1 20%;             /* 20% y permite encoger */
+  max-width: 555px;  
+}
+
+/* Tabla de productividad */
+.productivityTable {
+  width: 100%; /* que use el 100% del contenedor wrapper */
+  table-layout: fixed;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado rojo con texto blanco */
+.productivityTable thead th {
+  background-color: #cf1818;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Alternancia blanco/gris */
+.productivityTable td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.productivityTable tr td:nth-child(odd) {
+  background-color: #ffffff;
+}
+.productivityTable tr td:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Bordes redondeados en las esquinas */
+.productivityTable thead tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+.productivityTable thead tr:first-child th:last-child {
+  border-top-right-radius: 12px;
+}
+.productivityTable tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.productivityTable tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* --------------------------------------------- */
+/* Estilos para la tabla SCM de ejemplo */
+.scmWrapper {
+  width: 80%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  flex: 1 1 auto;
+  min-width: 0;    
+}
+
+.scmTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.scmTable th {
+  background-color: #2e3a59;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.scmTable td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* --------------------------------------------- */
+/* Estilos para la tabla de Productividad */
+
+/* Alternancia blanco/gris */
+.productivityTable td {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+}
+.productivityTable tr td:nth-child(odd) {
+  background-color: #ffffff;
+}
+.productivityTable tr td:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Hover resaltado */
+.productivityTable tbody tr:hover td {
+  background-color: #ffe5e5 !important;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.filterPanel {
+  padding: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.filterGroup label {
+  font-weight: bold;
+}
+
+.filterGroup select,
+.filterGroup input,
+.filterGroup button {
+  padding: 6px;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.pctLow {
+  background: #c20000;   /* rojo */
+  color: #fff;            /* texto blanco */
+  font-weight: 600;
+}
+
+.pctOk {
+  background: #009207;   /* verde */
+  color: #fff;            /* texto blanco */
+  font-weight: 600;
+}
+
+/* intra.module.css: añade estas clases */
+
+.tuGreen {
+  background-color: #009207;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.tuYellow {
+  background-color: #ffcc00;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.tuRed {
+  background-color: #c20000;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+/* ayuda para mostrar el contenido dentro de la celda */
+.pctCell {
+  display: inline-block;
+  min-width: 70px;
+}
+
+
+
+/* Modal simple: overlay + contenido centrado */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 420px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}

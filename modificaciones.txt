@@ -1,0 +1,8 @@
+1. se instalo en el backend
+npm install express multer exceljs mysql2 node-cron dotenv
+
+------------------
+
+
+
+

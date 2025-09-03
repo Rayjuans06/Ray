@@ -1,0 +1,19 @@
+Opción 1: Usando Get-Content en PowerShell
+Get-Content "D:\1001\reportes.sql" | D:\xampp\mysql\bin\mysql.exe -u root -p reportes
+
+
+Esto leerá el archivo reportes.sql y lo enviará a MySQL.
+
+Te pedirá la contraseña de root.
+
+Opción 2: Abrir MySQL y usar source
+
+Abre PowerShell y entra a MySQL:
+
+D:\xampp\mysql\bin\mysql.exe -u root -p
+
+
+Dentro del prompt de MySQL:
+
+USE reportes;
+SOURCE D:/1001/reportes.sql;

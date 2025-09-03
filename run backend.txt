@@ -1,0 +1,31 @@
+-mas memoria 
+node --max-old-space-size=4096 server.js
+
+
+-borrar contenido de la base de dato 
+
+DELETE FROM clipper;
+ALTER TABLE clipper AUTO_INCREMENT = 1;
+
+---------------------------------------
+
+
+
+necesito un comando una formula en Excel la cual tome una celda como fererencia para buscar en una columna todos los datos que coincidan con esa referencia, y se tomara en cuenta esas filas para extraer la fechas de las filas que considieron, para colocar en la celda en donde se puso la formula la fecha mas antigua  
+
+
+
+en la columna 'clock_in' se  registran en la base de  datos con este formato : 5527-10-08 00:00:00
+y necesito que se registren con el mismo formato que viene de el Excel 
+que es asi '144407', asi '144407' o con mas caracteres
+
+
+
+muy bien ahora con otra columna 
+necesito cambiar también en la columna de RANk aparece asi "Sun Dec 31 1899 00:00:00 GMT-0636 (hora estándar c" y en el Excel del que provienen se ve asi : 01/05/2025
+
+necesito cambiar también en la columna de RANk aparece asi "Sun Dec 31 1899 00:00:00 GMT-0636 (hora estándar c" y en el Excel del que provienen se ve asi : 01/05/2025
+
+tego un problema con mi proyecto de react que tiene una base de datos de MySQL, necesito que haga las consultas mas rápido, pero tengo muchos registro (menos de 2 millones), existe alguna manera de que se hagan las consultas mas rápidas
+
+

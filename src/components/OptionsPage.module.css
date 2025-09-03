@@ -1,0 +1,446 @@
+:root {
+  --color-fondo: #f7f7f7;
+  --color-borde: #ddd;
+  --color-texto: #333;
+  --color-texto-secundario: #555;
+  --color-blanco: #fff;
+  --color-sombra: rgba(0, 0, 0, 0.1);
+  --fuente-base: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-base);
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem;
+  
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 2000px; 
+  }
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-blanco);
+  height: 70px;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+.main-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-header .brand img {
+  height: 40px; 
+}
+
+.main-header .brand h1 {
+  font-size: 1.2rem;
+  color: var(--color-texto);
+  margin: 0;
+}
+
+.main-header .user-greeting {
+  font-size: 1rem;
+  color: var(--color-texto-secundario);
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.loading-screen::after {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #333 0%, #333 50%, rgba(0,0,0,0) 50%);
+  background-size: 200% 100%;
+  animation: loading-bars 1.5s infinite;
+}
+
+@keyframes loading-bars {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.zone-group {
+  margin: 1.5rem 0;
+  padding: 0 0.5rem;
+}
+
+.zone-group h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+.area-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.area-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--color-sombra);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.area-button:hover {
+  transform: translateY(-2px);
+}
+
+.area-image {
+  width: 100%;
+  height: 120px; 
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.area-name {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}
+
+.modal,
+.form-modal,
+.animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content,
+.form-modal-content,
+.animation-content {
+  background: var(--color-blanco);
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.paro-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.paro-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: var(--color-blanco);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.paro-button[data-paro="Mantenimiento"] {
+  background-color: #D32F2F;
+}
+.paro-button[data-paro="Metodos"] {
+  background-color: #FF9800;
+}
+.paro-button[data-paro="Calidad"] {
+  background-color: #FDD835;
+  color: #000; 
+}
+.paro-button[data-paro="Falta de material"] {
+  background-color: #00ACC1;
+}
+.paro-button[data-paro="Paro programado"] {
+  background-color: #757575;
+}
+.paro-button[data-paro="Cambio de modelo"] {
+  background-color: #1E88E5;
+}
+.paro-button[data-paro="Seguridad"] {
+  background-color: #7B1FA2;
+}
+.paro-button[data-paro="IT"] {
+  background-color: #000000;
+}
+.paro-button[data-paro="Falta de personal"] {
+  background-color: #006d36;
+}
+
+.form-modal textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.5rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  margin: 1rem 0;
+  resize: vertical;
+  font-family: var(--fuente-base);
+}
+
+.form-modal button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-modal button:nth-child(1) {
+  background-color: #2196f3;
+  color: var(--color-blanco);
+}
+
+.form-modal button:nth-child(2) {
+  background-color: #e0e0e0;
+}
+
+.animation-overlay .animation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animation-overlay .spinner {
+  margin: 1rem auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .area-buttons-container {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content,
+  .form-modal-content,
+  .animation-content {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .area-buttons-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .area-button {
+    padding: 0.5rem;
+  }
+}
+
+.bulk-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bulk-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.mode-selector {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.mode-selector label {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bulk-section {
+  margin-bottom: 15px;
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.bulk-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.bulk-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.bulk-buttons button:first-child {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.bulk-buttons button:first-child:hover {
+  background-color: #218838;
+}
+
+.bulk-buttons button:last-child {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.bulk-buttons button:last-child:hover {
+  background-color: #c82333;
+}
+
+.area-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.area-group div {
+  display: flex;
+  align-items: center;
+}
+
+.area-group label {
+  margin-left: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.bulk-button {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  color: #333333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bulk-button:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.bulk-button {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  color: #333333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bulk-button:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}

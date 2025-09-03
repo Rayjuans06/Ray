@@ -1,0 +1,1 @@
+shiftAssigner (funciona para calcular el turno en la table de clipper )

@@ -1,0 +1,25 @@
+Instalar dependencia
+npm i chokidar
+
+Cómo ejecutarlo
+
+Temporal/manual:
+
+node sync-runner.js
+
+
+Como script de npm (en package.json):
+
+{ "scripts": { "clipper:watch": "node sync-runner.js" } }
+
+
+y luego:
+
+npm run clipper:watch
+
+
+Con PM2 (para que quede siempre encendido):
+
+pm2 start sync-runner.js --name clipper-sync
+pm2 save
+pm2 startup

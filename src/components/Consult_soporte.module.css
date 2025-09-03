@@ -1,0 +1,413 @@
+:root {
+  --primary-color: #007bff;      
+  --secondary-color: #333;       
+  --background-color: #f8f9fa;   
+  --text-color: #212529;         
+  --border-color: #dee2e6;       
+  --danger-color: #dc3545;       
+  --success-color: #28a745;      
+  --hover-row: #e9f5ff;          
+  --selected-row: #cce5ff;       
+  --edit-button-color: #1E90FF;  
+  --delete-button-color: #FF4500;
+}
+
+.user-management-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+
+.user-management-header {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-image {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+
+@media (min-width: 768px) {
+  .header-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.user-management-header h1 {
+  margin: 10px 0 0 0;
+  font-size: 1.5rem;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.filters {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.filters h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.filter-item label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.filter-item input[type="number"],
+.filter-item input[type="date"],
+.filter-item select,
+.filter-item input[type="text"],
+.filter-item input[type="time"],
+.filter-item input[type="datetime-local"] {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.filter-buttons button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.charts-button-container {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.charts-button-container button {
+  padding: 8px 15px;
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.charts-button-container button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.report-table thead {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.report-table th,
+.report-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.report-table tbody tr:hover {
+  background-color: var(--hover-row);
+  transition: background-color 0.3s ease;
+}
+
+.report-table tbody tr.selected {
+  background-color: var(--selected-row);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.action-buttons button {
+  padding: 6px 12px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.action-buttons button.edit {
+  background-color: var(--edit-button-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(30, 144, 255, 0.8);
+}
+
+.action-buttons button.delete {
+  background-color: var(--delete-button-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 69, 0, 0.8);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.pagination button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 10px;
+}
+
+.modal-container {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .modal-container {
+    max-width: 800px;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+.date-modal-container {
+  max-width: 800px;
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    padding: 15px 20px;
+    max-width: 100%;
+    margin: 0 5px;
+  }
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.chart-item {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.chart-item h4 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
+.pareto-steps {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pareto-steps button {
+  padding: 6px 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.pareto-steps button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pareto-steps button:hover:not(:disabled) {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.pareto-section {
+  margin-bottom: 20px;
+}
+
+.pareto-section h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.pareto-section select {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.chart-container {
+  margin-top: 20px;
+}
+
+.modal-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.modal-container input[type="text"],
+.modal-container input[type="datetime-local"],
+.modal-container input[type="time"],
+.modal-container select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.modal-container button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-container button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}

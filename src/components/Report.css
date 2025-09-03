@@ -1,0 +1,369 @@
+
+body {
+ 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+
+.user-management-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-management-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.user-management-header h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.toggle-form-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.toggle-form-button:hover {
+  background-color: #0056b3;
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-user-form input,
+.add-user-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-user-form input:focus,
+.add-user-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-user-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-user-form button:hover {
+  background-color: #0056b3;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.user-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.user-table button {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-table button:hover {
+  background-color: #218838;
+}
+
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.edit-user-form h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.edit-user-form input,
+.edit-user-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.edit-user-form input:focus,
+.edit-user-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-user-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-user-form button:hover {
+  background-color: #0056b3;
+}
+
+.edit-user-form button:last-child {
+  background-color: #dc3545;
+}
+
+.edit-user-form button:last-child:hover {
+  background-color: #c82333;
+}
+
+.filters {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.filters h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.filters input,
+.filters select {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.filters button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
+}
+
+.filters + .user-table {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .user-management-container {
+    padding: 10px;
+  }
+
+  .header-image {
+    max-width: 100px;
+  }
+
+  .user-management-header h1 {
+    font-size: 20px;
+  }
+
+  .add-user-form input,
+  .add-user-form select,
+  .add-user-form button,
+  .filters input,
+  .filters select,
+  .filters button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .filters {
+    padding: 15px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 8px;
+  }
+
+  .user-table button {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-management-container {
+    padding: 15px;
+  }
+
+  .header-image {
+    max-width: 120px;
+  }
+
+  .user-management-header h1 {
+    font-size: 22px;
+  }
+
+  .add-user-form input,
+  .add-user-form select,
+  .add-user-form button,
+  .filters input,
+  .filters select,
+  .filters button {
+    font-size: 15px;
+    padding: 9px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .user-table {
+    font-size: 15px;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 10px;
+  }
+
+  .user-table button {
+    padding: 8px 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .user-management-container {
+    padding: 50px;
+  }
+
+  .user-management-header h1 {
+    font-size: 24px;
+  }
+
+  .add-user-form input,
+  .add-user-form select,
+  .add-user-form button,
+  .filters input,
+  .filters select,
+  .filters button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .filters input,
+  .filters select {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .user-table {
+    font-size: 16px;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 12px;
+  }
+
+  .user-table button {
+    padding: 10px 15px;
+  }
+}

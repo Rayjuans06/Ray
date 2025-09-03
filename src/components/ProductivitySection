@@ -1,0 +1,74 @@
+import React, { useState, useEffect } from 'react';
+import { useProductNbApi } from '../hooks/useProductNbApi';
+
+export default function ProductivitySection() {
+  const { processAll, fetchProductNb } = useProductNbApi();
+  const [data, setData]           = useState([]);
+  const [loading, setLoading]     = useState(false);
+  const [processing, setProcessing] = useState(false);
+
+  const loadData = async () => {
+    setLoading(true);
+    try {
+      const rows = await fetchProductNb();  // traerá limit=50, offset=0 por defecto
+      setData(rows);
+    } catch (e) {
+      console.error('Error al cargar productnb:', e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleProcess = async () => {
+    setProcessing(true);
+    try {
+      const res = await processAll();
+      if (!res.ok) throw new Error('Error en el servidor');
+      await loadData(); // recarga la tabla con los nuevos datos
+    } catch (e) {
+      console.error('Error al procesar productnb:', e);
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  return (
+    <div>
+      <button onClick={handleProcess} disabled={processing}>
+        {processing ? 'Procesando…' : 'Procesar Productividad'}
+      </button>
+
+      {loading
+        ? <p>Cargando datos…</p>
+        : (
+          <table>
+            <thead>
+              <tr>
+                {['Fecha','CCenter','Shift','T1','T2','T3','Total'].map(h => (
+                  <th key={h}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {data.map(r => (
+                <tr key={`${r.date}-${r.id_CCenter}-${r.shift_id}`}>
+                  <td>{r.date}</td>
+                  <td>{r.id_CCenter}</td>
+                  <td>{r.shift_id}</td>
+                  <td>{r.SumaTurno1}</td>
+                  <td>{r.SumaTurno2}</td>
+                  <td>{r.SumaTurno3}</td>
+                  <td>{r.SumaTurnos}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )
+      }
+    </div>
+  );
+}

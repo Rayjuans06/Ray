@@ -1,0 +1,306 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --warning-color: #ffc107;
+  --bg-light: #f8f9fa;
+  --bg-white: #fff;
+  --font-color: #333;
+  --border-color: #dee2e6;
+}
+
+.userManagementContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--font-color);
+  background-color: var(--bg-light);
+}
+
+.userManagementHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-white);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.userManagementHeader h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.headerImage {
+  width: 40px;
+  height: 40px;
+}
+
+.floatingNotification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--success-color);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+.floatingNotification.error {
+  background-color: var(--error-color);
+}
+
+.errorMessage {
+  background-color: var(--error-color);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.toggleFormButton {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.toggleFormButton:hover {
+  background-color: #0056b3;
+}
+
+.addUserForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--bg-white);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.addUserForm input,
+.addUserForm select {
+  flex: 1 1 200px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.addUserForm button {
+  background-color: var(--success-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.addUserForm button:hover {
+  background-color: #218838;
+}
+
+.filterSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--bg-white);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.filterSection input,
+.filterSection select {
+  flex: 1 1 150px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.filterSection button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.filterSection button:hover {
+  background-color: #0056b3;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-white);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.userTable thead {
+  background-color: #e9ecef;
+}
+
+.userTable th,
+.userTable td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.userTable th {
+  font-weight: 600;
+  color: #495057;
+}
+
+.userTable tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.userTable tbody tr:hover {
+  background-color: #dceeff;
+}
+
+.selectedRow {
+  background-color: #b3d7ff !important;
+}
+
+.userTable button {
+  margin-right: 5px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.userTable button:hover {
+  opacity: 0.9;
+}
+.userTable button:nth-of-type(1) {
+  background-color: var(--warning-color);
+  color: #fff;
+}
+.userTable button:nth-of-type(2) {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modalContent h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.modalContent input,
+.modalContent select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.modalContent button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 0.95rem;
+}
+.modalContent button:nth-of-type(2) {
+  background-color: var(--secondary-color);
+}
+.modalContent button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .userManagementContainer {
+    padding: 10px;
+  }
+
+  .userManagementHeader {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .userManagementHeader h1 {
+    font-size: 1.4rem;
+  }
+
+  .headerImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .toggleFormButton {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .addUserForm,
+  .filterSection {
+    flex-direction: column;
+  }
+
+  .addUserForm input,
+  .addUserForm select,
+  .filterSection input,
+  .filterSection select {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .addUserForm button,
+  .filterSection button {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .userTable th,
+  .userTable td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
